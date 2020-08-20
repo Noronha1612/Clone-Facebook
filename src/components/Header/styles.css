@@ -1,13 +1,19 @@
 header {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+
     width: 100%;
     background: var(--color-container-background);
     height: 60px;
 
     border-bottom: 1px solid var(--color-background-light);
-    display: flex;
-    align-items: center;
 
     padding: 0px 16px;
+}
+
+header section {
+    display: flex;
+    align-items: center;
 }
 
 header .logo {
