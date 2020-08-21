@@ -1,7 +1,15 @@
 import React, { HTMLAttributes, ButtonHTMLAttributes, useState } from 'react';
 import { MdSearch, MdGames } from 'react-icons/md';
 import { FiYoutube } from 'react-icons/fi';
-import { FaHome, FaStore, FaUsers } from 'react-icons/fa';
+import { 
+  FaHome,
+  FaStore, 
+  FaUsers,
+  FaPlus,
+  FaFacebookMessenger,
+  FaBell,
+  FaSortDown
+} from 'react-icons/fa';
 import { IconType } from 'react-icons/lib';
 
 import Facebook from '../../assets/facebook.png';
@@ -22,7 +30,10 @@ const NavButton: React.FC<NavButtonProps> = ({ Icon, subtitle, ...buttonProps })
 }
 
 const Header: React.FC = () => {
-  const [ active, setActive ] = useState(1);
+  const [ activePage, setActivePage ] = useState(1);
+  const [ activeMenu, setActiveMenu ] = useState(0);
+
+  const avatar = 'https://scontent.frec34-1.fna.fbcdn.net/v/t1.0-9/13434932_1043968092351122_153505368284202286_n.jpg?_nc_cat=109&_nc_sid=09cbfe&_nc_eui2=AeFeGQWxwya5exv6_bo6b_f-wYxj_6V8NDfBjGP_pXw0Nwxv5QWNP_2OehwoE13kWjLGBRlhTM7_y0ypAEtdO9jv&_nc_ohc=DDB4HrfdAPAAX9rgpn3&_nc_ht=scontent.frec34-1.fna&oh=d00fc77d2d94be738774bd1d1ae8e6e6&oe=5F650C62';
 
   return (
     <header>
@@ -40,15 +51,30 @@ const Header: React.FC = () => {
         </section>
         
         <section className="page-nav">
-          <NavButton onClick={() => setActive(1)} className={active === 1 ? "nav-page active" : "nav-page" } Icon={FaHome} subtitle="Página Inicial" />
-          <NavButton onClick={() => setActive(2)} className={active === 2 ? "nav-page active" : "nav-page" } Icon={FiYoutube} subtitle="Watch" />
-          <NavButton onClick={() => setActive(3)} className={active === 3 ? "nav-page active" : "nav-page" } Icon={FaStore} subtitle="Marketplace" />
-          <NavButton onClick={() => setActive(4)} className={active === 4 ? "nav-page active" : "nav-page" } Icon={FaUsers} subtitle="Grupos" />
-          <NavButton onClick={() => setActive(5)} className={active === 5 ? "nav-page active" : "nav-page" } Icon={MdGames} subtitle="Jogos" />
+          <NavButton onClick={() => setActivePage(1)} className={activePage === 1 ? "nav-page active" : "nav-page" } Icon={FaHome} subtitle="Página Inicial" />
+          <NavButton onClick={() => setActivePage(2)} className={activePage === 2 ? "nav-page active" : "nav-page" } Icon={FiYoutube} subtitle="Watch" />
+          <NavButton onClick={() => setActivePage(3)} className={activePage === 3 ? "nav-page active" : "nav-page" } Icon={FaStore} subtitle="Marketplace" />
+          <NavButton onClick={() => setActivePage(4)} className={activePage === 4 ? "nav-page active" : "nav-page" } Icon={FaUsers} subtitle="Grupos" />
+          <NavButton onClick={() => setActivePage(5)} className={activePage === 5 ? "nav-page active" : "nav-page" } Icon={MdGames} subtitle="Jogos" />
         </section>
 
         <section className="menu-nav">
-
+          <div className="profile-button">
+            <img src={avatar} alt="user-avatar"/>
+            <span className="user-name">Gabriel Noronha</span>
+          </div>
+          <button onClick={() => setActiveMenu(1)} className={activeMenu === 1 ? "nav-menu active" : "nav-menu" }>
+            <FaPlus />
+          </button>
+          <button onClick={() => setActiveMenu(2)} className={activeMenu === 2 ? "nav-menu active" : "nav-menu" }>
+            <FaFacebookMessenger />
+          </button>
+          <button onClick={() => setActiveMenu(3)} className={activeMenu === 3 ? "nav-menu active" : "nav-menu" }>
+            <FaBell />
+          </button>
+          <button onClick={() => setActiveMenu(4)} className={activeMenu === 4 ? "nav-menu active" : "nav-menu" }>
+            <FaSortDown />
+          </button>
         </section>
     </header>
   );

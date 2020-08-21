@@ -7,13 +7,12 @@
 }
 
 :root {
-    --color-icons-inactive: #999B9F;
     --color-primary: #2D88FF;
     --color-text-dark: #94989B;
     --color-text-primary: #A8AAAF;
     --color-text-light: #E7E9ED;
     --color-background: #18191A;
-    --color-background-light: #393A3B;
+    --color-background-light: #5e5f5f;
     --color-container-background: #242526;
     --color-container-background-light: #3A3B3C;
 }
