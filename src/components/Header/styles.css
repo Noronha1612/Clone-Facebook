@@ -55,9 +55,27 @@ header .search-icon {
     margin-right: 4px;
 }
 
+header .notification {
+    position: absolute;
+    font-size: 11px;
+    font-weight: bold;
+    background: var(--color-notification-background);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19px;
+    width: 19px;
+    border-radius: 50%;
+}
+
 header .page-nav {
     display: flex;
     justify-content: space-around;
+    position: relative;
+}
+
+header .page-nav .notification {
+    transform: translate(13px, -10px);
 }
 
 header .page-nav .nav-page {
@@ -110,6 +128,10 @@ header .page-nav .active::after {
 
 header .menu-nav {
     padding-right: 30px;
+}
+
+header .menu-nav .notification {
+    transform: translate(15px, -15px);
 }
 
 header .menu-nav .profile-button {
