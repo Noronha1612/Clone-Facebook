@@ -1,6 +1,6 @@
 header {
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    display: inline-flex;
+    justify-content: space-between;
 
     width: 100%;
     background: var(--color-container-background);
@@ -52,4 +52,55 @@ header .input-box #search {
 header .search-icon {
     color: var(--color-text-primary);
     margin-right: 4px;
+}
+
+header .page-nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+header .page-nav .nav-page {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 26px;
+
+    padding: 14px 55px;
+
+    background: none;
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    overflow: visible;
+
+    transition: background .15s;
+}
+
+header .page-nav .nav-page:not(.active) {
+    color: var(--color-text-light);
+}
+
+header .page-nav .active {
+    color: var(--color-primary);
+}
+
+header .page-nav .nav-page:not(.active):hover {
+    background: var(--color-container-background-light);
+}
+
+header .page-nav .active::after {
+    content: '';
+    display: block;
+
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+
+    height: 3px;
+    width: 100%;
+    background: var(--color-primary);
 }
